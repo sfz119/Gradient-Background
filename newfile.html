@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background:linear-gradient(to right, red, yellow);
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            font-size:4rem;
+        }
+        p{
+            text-align:center;
+            font-size:1rem;
+        }
+        #section1{
+            display:grid;
+            min-height:100vh;
+            justify-content: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body id="back">
+    <div id="section1">
+    <h1>Backgroud color Generator</h1>
+    <p>
+        Choose a color
+        <br><br><input type="color" class="color1" name="col1"  value="#00ff00">
+        <input type="color" class="color2" name="col2" value="#ff0000">
+    </p>
+    <h3></h3>
+    </div>
+
+    <script>
+        var css = document.querySelector("h3");
+        var color1 = document.querySelector(".color1");
+        var color2 = document.querySelector(".color2");
+        var body = document.getElementById("back");
+        console.log(css);
+        console.log(color1);
+        console.log(color2);
+        function gradient(){
+            body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
+            css.textContent = body.style.background + " ;" ;
+    }
+        color1.addEventListener("input", gradient);
+        color2.addEventListener("input", gradient);
+    </Script>
+</body>
+</html>
